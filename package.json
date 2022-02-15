@@ -1,0 +1,32 @@
+{
+  "name": "server-with-nosqldatabase",
+  "version": "1.0.0",
+  "description": "Create a server with three endpoints and a NoSQL database (MongoDB).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint ./",
+    "lint-fix": "eslint ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIarlori/Server-with-NoSQLdatabase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FIarlori/Server-with-NoSQLdatabase/issues"
+  },
+  "homepage": "https://github.com/FIarlori/Server-with-NoSQLdatabase#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1"
+}
+}
+

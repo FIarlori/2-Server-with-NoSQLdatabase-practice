@@ -9,6 +9,5 @@
     "sourceType": "module"
   },
   "plugins": ["prettier"],
-  "parser": "@babel/eslint-parser",
   "rules": {}
 }

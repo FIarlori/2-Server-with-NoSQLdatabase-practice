@@ -5,5 +5,16 @@ const createQuestionnaire = async ({
   return await questionnaireModel.create(questionnaireParams);
 };
 
-const questionnaireController = createQuestionnaire;
+const getQuestionnaireById = async ({
+  questionnaireId,
+  questionnaireModel,
+}) => {
+  return await questionnaireModel.findById(
+    questionnaireId,
+    'date sleep training organizationTime screenUsage drinks _id',
+  );
+};
+
+
+const questionnaireController = {createQuestionnaire, getQuestionnaireById};
 module.exports = questionnaireController;

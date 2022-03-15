@@ -1,4 +1,5 @@
 require('dotenv').config();
+const logger = require('./utils/logger');
 const mongoose = require('mongoose');
 const express = require('express');
 const questionnaireModel = require('../models/Mongoschema');
@@ -11,7 +12,8 @@ const router = express.Router();
  */
 router.get('/health', function (req, res) {
   const dbState = mongoose.STATES[mongoose.connection.readyState];
-    res.set('Content-Type', 'application/json').send({ response: dbState });
+  logger.info('Database status:' + dbState);  
+  res.set('Content-Type', 'application/json').send({ response: dbState });
 });
 
 /**
@@ -25,11 +27,16 @@ router.post('/questionnaire', async (req, res) => {
       questionnaireModel,
     });
     res.status(200).set('Content-Type', 'application/json').send(questionnaire);
+    logger.info('Questionnaire created. ');
   } catch (error) {
-    if (error.name === "ValidationError")
-      return res.status(400).set('Content-Type', 'application/json').send({error: error.message});
-  else
-    return res.status(500).set('Content-Type', 'application/json').send({error: error.message});
+    if (error.name === "ValidationError"){
+    logger.info('Questionnaire not created due to incorrect data.');
+    return res.status(400).set('Content-Type', 'application/json').send({error: error.message});
+    } 
+    else {
+      logger.info('Questionnaire not created due to server error.');
+      return res.status(500).set('Content-Type', 'application/json').send({error: error.message});
+    }
   }
 });
 
@@ -46,12 +53,15 @@ router.get('/questionnaires/:id', async (req, res) => {
     });
     if (result) {
       res.status(200).send(result);
+      logger.info('Questionnaire obtained. ');
     } else {
       res.status(404).set('Content-Type', 'application/json').send({message: 'questionnaire not found'});
+      logger.info('Questionnaire not found due to bad request. ');
     }
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: error.message });
+    logger.info('Questionnaire not found due to server error. ');
   }
 });
 

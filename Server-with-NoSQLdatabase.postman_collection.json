@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "4e634328-5354-4e25-953f-01a73da55ee1",
+		"name": "Server-with-NoSQLdatabase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/questionnaire",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2022-02-09\",\r\n    \"sleep\":{\r\n    \"quality\": \"bad\",\r\n    \"quantity\":{\r\n    \"goToBed\": \"23:00\",\r\n    \"wakeUp\": \"06:00\",\r\n    \"total\": 7\r\n  }\r\n  },\r\n    \"training\": {\r\n      \"time\": \"00:30\"\r\n    },\r\n    \"organizationTime\": {\r\n      \"tool\": [\"app\", \"notes\", \"mobile\"]\r\n      },\r\n    \"screenUsage\": {\r\n      \"beforeSleep\": [\"mobile\"],\r\n      \"socialNetworksVideoGames\": true\r\n    },\r\n    \"drinks\": {\r\n      \"frequency\": {\r\n        \"water\": 3,\r\n        \"suggaryDrinks\": 0,\r\n        \"energyDrinks\": 0,\r\n        \"caffeinatedDrinks\": 0,\r\n        \"alcohol\": 2\r\n      }\r\n    }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questionnaire",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questionnaire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get/questionnaires/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/questionnaire/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questionnaire",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

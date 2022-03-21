@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const logger = require('./utils/logger');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -16,7 +17,9 @@ const uri = process.env.DB_URI;
 mongoose.connect(uri);
 
 app.use('/', router);
+
 app.listen(port, ()=> {
     console.log('API rest running at port' + port);
     logger.info('Server started and running on port' + port)
 });
+

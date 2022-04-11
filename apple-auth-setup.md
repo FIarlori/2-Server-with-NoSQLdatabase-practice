@@ -23,6 +23,8 @@ The Apple strategy authenticates users using their Apple account. Before
 
 ![ALT](Setup-images\google auth\1.png)
 ![Alt Text](Setup-images\google auth\{1}.{png})
+![1](https://user-images.githubusercontent.com/77855553/162794376-9e90fb04-9dba-4cf3-9c36-9a29c5ed57f4.png)
+
 
 2. Once registered, select `Certificates, Identifiers & profiles`.
 

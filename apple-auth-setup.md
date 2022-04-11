@@ -21,7 +21,7 @@ The Apple strategy authenticates users using their Apple account. Before
 
 1. Go to http://developer.apple.com and login with Apple account.
 
-![image](Setup-images\google auth\1.png)
+![ALT](Setup-images\google auth\1.png)
 
 2. Once registered, select `Certificates, Identifiers & profiles`.
 
